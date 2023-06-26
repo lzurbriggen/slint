@@ -16,6 +16,7 @@ name = "todo"
 
 [dependencies]
 slint = { path = "../../../api/rs/slint" }
+i-slint-backend-winit = { path = "../../../internal/backends/winit" }
 
 [build-dependencies]
 slint-build = { path = "../../../api/rs/build" }

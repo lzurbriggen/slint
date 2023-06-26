@@ -1,7 +1,8 @@
 // Copyright © SixtyFPS GmbH <info@slint.dev>
 // SPDX-License-Identifier: MIT
 
-use slint::{FilterModel, Model, SortModel};
+use i_slint_backend_winit::Backend;
+use slint::{platform, FilterModel, Model, SortModel};
 use std::rc::Rc;
 
 #[cfg(target_arch = "wasm32")]
@@ -11,6 +12,7 @@ slint::include_modules!();
 
 #[cfg_attr(target_arch = "wasm32", wasm_bindgen(start))]
 pub fn main() {
+    platform::set_platform(Box::new(Backend::new())).unwrap();
     // This provides better error messages in debug mode.
     // It's disabled in release mode so it doesn't bloat up the file size.
     #[cfg(all(debug_assertions, target_arch = "wasm32"))]

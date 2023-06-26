@@ -31,6 +31,7 @@ members = [
     'helper_crates/const-field-offset',
     'helper_crates/vtable',
     'helper_crates/vtable/macro',
+    'internal/backends/baseview',
     'internal/backends/winit',
     'internal/backends/qt',
     'internal/backends/selector',
